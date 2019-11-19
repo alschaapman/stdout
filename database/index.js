@@ -1,13 +1,10 @@
-const mysql = require('mysql');
-const { promisifyAll } = require('bluebird');
+const mariadb = require('mariadb');
 
 const config = require('./config.js');
 
-const db = mysql.createConnection(config);
-const query = db.query.bind(db);
-promisifyAll(db);
+const pool = mariadb.createPool(config);
 
-db.connectAsync()
+pool.getConnection(config)
   .then(() => {
     console.log('DATABASE CONNECTION SUCCESSFUL.');
   })
@@ -16,5 +13,4 @@ db.connectAsync()
   });
 
 module.exports = {
-  query,
 };
