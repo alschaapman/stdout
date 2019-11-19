@@ -14,5 +14,5 @@ app.listenAsync(port)
     console.log(`SERVER LISTENING ON PORT ${port}.`);
   })
   .catch((err) => {
-    console.error(err);
+    throw new Error(`SERVER FAILED! ${err}`);
   });

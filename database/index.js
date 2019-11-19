@@ -12,7 +12,7 @@ db.connectAsync()
     console.log('DATABASE CONNECTION SUCCESSFUL.');
   })
   .catch((err) => {
-    console.error(err);
+    throw new Error(`DATABASE CONNECTION FAILED! ${err}`);
   });
 
 module.exports = {
