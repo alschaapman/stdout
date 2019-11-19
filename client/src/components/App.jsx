@@ -1,4 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Masthead from './Masthead.jsx';
+import Feed from './Feed.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +15,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div><h1>Al Schaapman</h1></div>
+      <div>
+        <Masthead />
+        <Feed />
+      </div>
     );
   }
 }
